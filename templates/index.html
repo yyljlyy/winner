@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>测试用例来了</title>
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easyui.min.js" charset="utf-8"></script>
+</head>
+<body>
+姓名： <input type="text" id="name" title="姓名"/>
+年龄： <input type="number" id="age"/>
+地址: <input type="text" id="address"/>
+<button type="button" id="set">提交数据</button>
+<table>
+</br>
+<tr>
+    =================================================Mysql  DATA====================================================
+</tr>
+        {% for foo in list %}
+            <tr>
+                <th>{{ foo.name }}</th>
+                <th>{{ foo.age }}</th>
+                <th>{{ foo.address }}</th>
+                <th><a onclick="deletes({{ foo.id }})" href="javaScript:void(0)" id="{{ foo.id }}" name="delete">删除</a></th>
+                <th>姓名： <input type="text" id="rname_{{ foo.id }}"/></th>
+                <th>年龄： <input type="number" id="rage_{{ foo.id }}"/></th>
+                <th>地址: <input type="text" id="raddress_{{ foo.id }}"/></th>
+                <th><a onclick="update({{ foo.id }})" href="javaScript:void(0)" id="{{ foo.id }}" name="update">修改</a></th>
+            </tr>
+        {% endfor %}
+</table>
+<tr>
+    =================================================Oracle  DATA====================================================
+</tr>
+<table>
+       {% for foo in lists %}
+        <tr>
+            <th>{{ foo.name }}</th>
+            <th>{{ foo.age }}</th>
+            <th>{{ foo.address }}</th>
+            <th><a onclick="deletes({{ foo.id }})" href="javaScript:void(0)" id="{{ foo.id }}" name="deleteo">删除</a></th>
+            <th>姓名： <input type="text" id="rname_{{ foo.id }}"/></th>
+            <th>年龄： <input type="number" id="rage_{{ foo.id }}"/></th>
+            <th>地址: <input type="text" id="raddress_{{ foo.id }}"/></th>
+            <th><a onclick="update({{ foo.id }})" href="javaScript:void(0)" id="{{ foo.id }}" name="updateo">修改</a></th>
+        </tr>
+        {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" media="screen, projection" /> <!-- main stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="{{ STATIC_URL }}css/tipsy.css" /> <!-- Tipsy implementation -->
+
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+<![endif]-->
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script> <!-- uiToTop implementation -->
+<script type="text/javascript" src="{{ STATIC_URL }}js/custom-scripts.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tipsy.js"></script> <!-- Tipsy -->
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+			
+	universalPreloader();
+						   
+});
+
+$(window).load(function(){
+
+	//remove Universal Preloader
+	universalPreloaderRemove();
+	
+	rotate();
+    dogRun();
+	dogTalk();
+	
+	//Tipsy implementation
+	$('.with-tooltip').tipsy({gravity: $.fn.tipsy.autoNS});
+						   
+});
+
+</script>
+
+
+<title>404 - Not found</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+
+<!-- Universal preloader -->
+<div id="universal-preloader">
+    <div class="preloader">
+        <img src="{{ STATIC_URL }}images/universal-preloader.gif" alt="universal-preloader" class="universal-preloader-preloader" />
+    </div>
+</div>
+<!-- Universal preloader -->
+
+<div id="wrapper">
+<!-- 404 graphic -->
+	<div class="graphic"></div>
+<!-- 404 graphic -->
+<!-- Not found text -->
+	<div class="not-found-text">
+    	<h1 class="not-found-text">File not found, sorry!</h1>
+    </div>
+<!-- Not found text -->
+
+<!-- top menu -->
+<div class="top-menu">
+	<a href="localhost:8000" class="with-tooltip" title="Return to the home page">主页</a>
+</div>
+<!-- top menu -->
+
+<div class="dog-wrapper">
+<!-- dog running -->
+	<div class="dog"></div>
+<!-- dog running -->
+	
+<!-- dog bubble talking -->
+	<div class="dog-bubble">
+    	
+    </div>
+    
+    <!-- The dog bubble rotates these -->
+    <div class="bubble-options">
+    	<p class="dog-bubble">
+        	你是不是感觉自己走丢了? 别担心,因为你可以找王娇娘!
+        </p>
+    	<p class="dog-bubble">
+	        <br />
+        	汪汪! 汪汪!
+        </p>
+        <p class="dog-bubble">
+        	<br />
+        	王娇娘! 王娇娘!
+        </p>
+        <p class="dog-bubble">
+        	我在哪里呀？<br />
+        </p>
+        <p class="dog-bubble">
+        	<br />
+        	王娇娘说:必须出来得瑟一下!不然她不能测试~我说我不信！
+        </p>
+        <p class="dog-bubble">
+        	<br />
+        	结果呢？?
+        </p>
+        <p class="dog-bubble">
+        	我现在跑到停不下来啊!!!!! 该死...
+        </p>
+        <p class="dog-bubble">
+        	<br />
+            好吧, 我承认我现在已经跑丢了...
+        </p>
+        <p class="dog-bubble">
+        	 我最好找只猫就在这结婚 <br /><img style="margin-top:8px" src="{{ STATIC_URL }}images/cat.png" alt="cat" />
+        </p>
+        <p class="dog-bubble">
+        	然后让王娇娘找不到我，哼！！！ @_@
+        </p>
+    </div>
+    <!-- The dog bubble rotates these -->
+<!-- dog bubble talking -->
+</div>
+
+<!-- planet at the bottom -->
+	<div class="planet"></div>
+<!-- planet at the bottom -->
+</div>
+
+</body>
+</html>
